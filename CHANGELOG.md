@@ -1,5 +1,16 @@
 # Changelog
 
+## [9.0.0](https://github.com/hsnaydd/stylelint-config/compare/v8.0.0...v9.0.0) (2026-11-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js ^22.22.2, ^24.15.0 or >=26.0.0 and stylelint 18 are now required. New rules from stylelint-config-recommended 19 (value-no-invalid, selector-no-invalid, selector-no-unmatchable, selector-no-deprecated and at-charset-rule-no-invalid) may report new problems in existing code.
+
+### build
+
+* upgrade stylelint to v18 ([57bc2af](https://github.com/hsnaydd/stylelint-config/commit/57bc2af10123a3f5abdb250a1fab8bfa51590210))
+
 ## [8.0.0](https://github.com/hsnaydd/stylelint-config/compare/v7.0.0...v8.0.0) (2026-01-26)
 
 

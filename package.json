@@ -1,6 +1,6 @@
 {
   "name": "@hsnaydd/stylelint-config",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "Shareable stylelint config for CSS and SCSS, with Prettier formatting and property ordering.",
   "main": "index.js",
   "files": [
