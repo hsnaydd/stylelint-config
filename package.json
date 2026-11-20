@@ -14,8 +14,9 @@
     "prettier"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier ./index.js --write"
+    "test": "node --test",
+    "format": "prettier index.js test --write",
+    "format:check": "prettier index.js test --check"
   },
   "repository": {
     "type": "git",
