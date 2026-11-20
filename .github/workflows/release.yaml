@@ -39,6 +39,9 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         run: pnpm test
 
-      - name: Publish
+      # Stages the release on npm. It goes live only after a maintainer
+      # approves it with 2FA (npmjs.com "Staged Packages" tab or
+      # `npm stage approve <stage-id>`).
+      - name: Stage publish
         if: ${{ steps.release.outputs.release_created }}
-        run: npm publish --provenance --access public
+        run: npm stage publish --provenance
