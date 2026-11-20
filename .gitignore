@@ -26,3 +26,5 @@ pnpm-debug.log*
 
 # Eslint
 .eslintcache
+# Claude Code personal settings
+.claude/settings.local.json
