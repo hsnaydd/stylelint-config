@@ -1,0 +1,14 @@
+{
+  "bootstrap-sha": "4793ccb5a30f1481e3821ae24a62ac9a06372d44",
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "package-name": "@hsnaydd/stylelint-config",
+      "changelog-sections": [
+        { "type": "feat", "section": "Features", "hidden": false },
+        { "type": "fix", "section": "Bug Fixes", "hidden": false },
+        { "type": "refactor", "section": "Refactors", "hidden": false }
+      ]
+    }
+  }
+}

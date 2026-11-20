@@ -1,12 +1,17 @@
 {
-  "name": "@atolye15/stylelint-config",
+  "name": "@hsnaydd/stylelint-config",
   "version": "8.0.0",
-  "description": "Atölye15 shareable config for stylelint.",
+  "description": "Shareable stylelint config for CSS and SCSS, with Prettier formatting and property ordering.",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "stylelint",
     "stylelint-config",
-    "atolye15"
+    "css",
+    "scss",
+    "prettier"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,14 +19,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atolye15/stylelint-config.git"
+    "url": "git+https://github.com/hsnaydd/stylelint-config.git"
   },
-  "author": "Atolye15",
+  "author": "Hasan Aydoğdu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atolye15/stylelint-config/issues"
+    "url": "https://github.com/hsnaydd/stylelint-config/issues"
   },
-  "homepage": "https://github.com/atolye15/stylelint-config#readme",
+  "homepage": "https://github.com/hsnaydd/stylelint-config#readme",
+  "packageManager": "pnpm@10.18.3",
   "engines": {
     "node": ">=20.19.0"
   },
