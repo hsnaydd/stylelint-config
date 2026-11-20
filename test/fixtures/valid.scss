@@ -1,0 +1,70 @@
+@use 'sass:map';
+@use 'sass:math';
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+);
+$gutter: 16px;
+
+@function rem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
+@mixin respond($breakpoint) {
+  @media (min-width: map.get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card {
+  --card-padding: #{$gutter};
+
+  $local-gap: math.div($gutter, 2);
+
+  @include truncate;
+
+  display: flex;
+  gap: $local-gap;
+  padding: var(--card-padding) rem(24px);
+  margin: 0 auto;
+  color: rgb(0 0 0 / 50%);
+  transition: opacity 0.2s ease;
+
+  @include respond(md) {
+    flex-direction: column;
+  }
+
+  &__title {
+    width: calc(100% - #{$gutter * 2});
+    font-size: rem(18px);
+    font-weight: 700;
+  }
+
+  &--hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  :global(.is-dark) & {
+    color: #fff;
+  }
+
+  @each $name, $size in $breakpoints {
+    &-#{$name} {
+      max-width: $size;
+    }
+  }
+}

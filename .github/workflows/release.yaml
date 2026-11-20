@@ -6,12 +6,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  issues: write
-  pull-requests: write
-
-env:
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  contents: write # to create release commit
+  issues: write # This is important for label creation
+  pull-requests: write # to create release PR
+  id-token: write # Required for Trusted Publishing
 
 jobs:
   release-please:
@@ -19,26 +17,31 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
-        with:
-          release-type: simple
-          package-name: '@atolye15/stylelint-config'
-          changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"refactor","section":"Refactors","hidden":false}]'
 
       - uses: actions/checkout@v6
+        if: ${{ steps.release.outputs.release_created }}
+
+      - uses: pnpm/action-setup@v6
         if: ${{ steps.release.outputs.release_created }}
 
       - uses: actions/setup-node@v6
         if: ${{ steps.release.outputs.release_created }}
         with:
-          node-version: '22'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
 
-      - name: Install yarn packages
+      - name: Install dependencies
         if: ${{ steps.release.outputs.release_created }}
-        run: yarn
+        run: pnpm install --frozen-lockfile
 
-      - name: Publish
+      - name: Run tests
         if: ${{ steps.release.outputs.release_created }}
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
+        run: pnpm test
+
+      # Stages the release on npm. It goes live only after a maintainer
+      # approves it with 2FA (npmjs.com "Staged Packages" tab or
+      # `npm stage approve <stage-id>`).
+      - name: Stage publish
+        if: ${{ steps.release.outputs.release_created }}
+        run: npm stage publish --provenance
