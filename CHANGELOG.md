@@ -3,11 +3,15 @@
 ## [9.0.0](https://github.com/hsnaydd/stylelint-config/compare/v8.0.0...v9.0.0) (2026-11-20)
 
 
+### 📦 Package renamed
+
+* This package was previously published as `@atolye15/stylelint-config`. It now continues as `@hsnaydd/stylelint-config`. Version 8.0.0 is also available under the new name with the same rules, so you can switch names without upgrading. To migrate, replace the package name in your `package.json` and in the `extends` field of your stylelint config.
+
 ### ⚠ BREAKING CHANGES
 
 * Node.js ^22.22.2, ^24.15.0 or >=26.0.0 and stylelint 18 are now required. New rules from stylelint-config-recommended 19 (value-no-invalid, selector-no-invalid, selector-no-unmatchable, selector-no-deprecated and at-charset-rule-no-invalid) may report new problems in existing code.
 
-### build
+### Build System
 
 * upgrade stylelint to v18 ([57bc2af](https://github.com/hsnaydd/stylelint-config/commit/57bc2af10123a3f5abdb250a1fab8bfa51590210))
 
