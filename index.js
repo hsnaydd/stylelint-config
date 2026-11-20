@@ -17,7 +17,6 @@ module.exports = {
     'declaration-block-no-duplicate-custom-properties': true,
     'declaration-block-no-duplicate-properties': true,
     'declaration-block-no-shorthand-property-overrides': true,
-    'declaration-block-single-line-max-declarations': 1,
     'declaration-no-important': true,
     'declaration-property-value-disallowed-list': {
       '/^border/': ['none'],

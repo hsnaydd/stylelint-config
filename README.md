@@ -36,14 +36,14 @@ Set your stylelint config to:
 
 Simply add a `"rules"` key to your config and add your overrides there.
 
-For example, to change the `indentation` to tabs and turn off the `number-leading-zero` rule:
+For example, to allow `!important` and named colors:
 
 ```json
 {
   "extends": "@hsnaydd/stylelint-config",
   "rules": {
-    "indentation": "tab",
-    "number-leading-zero": null
+    "declaration-no-important": null,
+    "color-named": null
   }
 }
 ```
