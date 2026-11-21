@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.0.1](https://github.com/hsnaydd/stylelint-config/compare/v9.0.0...v9.0.1) (2026-11-21)
+
+
+### Bug Fixes
+
+* show a readable message for BEM class name problems ([5285bf7](https://github.com/hsnaydd/stylelint-config/commit/5285bf7d8afa1a23be39a02a66fb9221e86e9c1f))
+
 ## [9.0.0](https://github.com/hsnaydd/stylelint-config/compare/v8.0.0...v9.0.0) (2026-11-20)
 
 
