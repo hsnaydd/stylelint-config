@@ -201,4 +201,15 @@ describe('rules', () => {
       assert.deepEqual(reportedRules(await lintCode(code, file)), []);
     });
   }
+
+  it('shows a readable message for BEM class name problems', async () => {
+    const result = await lintCode('.myBlock {\n  color: #fff;\n}\n', 'a.scss');
+
+    assert.deepEqual(
+      result.warnings.map((warning) => warning.text),
+      [
+        'Expected class selector to match BEM CSS pattern https://en.bem.info/methodology/css. (scss/selector-class-pattern)',
+      ],
+    );
+  });
 });
