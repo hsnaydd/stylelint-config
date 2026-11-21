@@ -5,7 +5,6 @@
 
 ### Bug Fixes
 
-* show a readable message for BEM class name problems ([616f46c](https://github.com/hsnaydd/stylelint-config/commit/616f46c38b606567e172894531a270ee15fddf1d))
 * show a readable message for BEM class name problems ([5285bf7](https://github.com/hsnaydd/stylelint-config/commit/5285bf7d8afa1a23be39a02a66fb9221e86e9c1f))
 
 ## [9.0.0](https://github.com/hsnaydd/stylelint-config/compare/v8.0.0...v9.0.0) (2026-11-20)
