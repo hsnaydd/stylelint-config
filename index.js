@@ -168,9 +168,11 @@ module.exports = {
       '^[a-z]([-]?[a-z0-9]+)*(__[a-z0-9]([-]?[a-z0-9]+)*)?(--[a-z0-9]([-]?[a-z0-9]+)*)?$',
       {
         resolveNestedSelectors: true,
-        message: function expected(selectorValue) {
-          return `Expected class selector "${selectorValue}" to match BEM CSS pattern https://en.bem.info/methodology/css.`;
-        },
+        // stylelint-scss does not pass the selector to custom messages, so
+        // this has to be a plain string. Once it does, show the selector again:
+        // https://github.com/stylelint-scss/stylelint-scss/issues/1409
+        message:
+          'Expected class selector to match BEM CSS pattern https://en.bem.info/methodology/css.',
       },
     ],
     'scss/selector-no-redundant-nesting-selector': true,
